@@ -1,0 +1,127 @@
+# Global system files
+.DS_Store
+Thumbs.db
+
+# Visual Studio / .NET
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+*/[Bb]in/
+*/[Oo]bj/
+artifacts/
+
+# Logs
+[Ll]og*/
+*/[Ll]og*/
+logs/
+*/logs/
+*.log
+*/*.log
+
+# Test outputs & coverage
+TestResults/
+*.trx
+*.coverage*
+coverage/
+.coverage
+.coveragexml
+.opencover.xml
+
+# NuGet
+packages/
+*.nupkg
+# If using local cache
+.nuget/
+project.lock.json
+
+# Tooling & IDE
+.vscode/
+.idea/
+*.iml
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# EF / Database local files
+*.mdf
+*.ldf
+*.dbmdl
+# Auto-generated EF designer files
+**/*Designer.cs
+
+# Publishing
+# Azure publish profiles (keep in secure store/CI)
+**/Properties/PublishProfiles/
+*.pubxml
+*.publishproj
+
+# Web assets
+wwwroot/lib/
+
+# Node/Frontend for microservices UIs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+# Keep lockfiles committed (package-lock.json/yarn.lock/pnpm-lock.yaml)
+
+# Docker / Containers
+# Local overrides and env files may contain secrets; prefer keeping override in repo if needed.
+# docker-compose.override.yml
+.docker/
+
+# Kubernetes
+.kube/
+*.kubeconfig
+
+# Secrets & environment
+.env
+.env.*
+appsettings.Local.json
+appsettings.Development.Local.json
+secrets.json
+
+# Cache
+*.cache
+
+# Terraform / IaC
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Misc
+# Rider and JetBrains caches are covered above
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# OS-specific
+ehthumbs.db
+Icon?
+
+
+# Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+.history/
+.factorypath
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+# Vim / Emacs
+*~
+*.swp
+*.swo
+.session
+# VS Code local history
+.history/
+
