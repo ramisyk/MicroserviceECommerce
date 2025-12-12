@@ -1,3 +1,4 @@
+
 # ECommerce With Microservice
 
 This repo is being developed within the scope of training in order to understand the fundamentals of microservice architecture and to improve the perspective. 
@@ -30,3 +31,29 @@ This service carries out the operations for discount coupons management.
 **Database:** MS SQL Server
 
 **ORM:** Dapper
+
+### Order
+This service carries out the operations for order management.
+
+**Entities:**
+- Address
+- OrderDetail
+- Ordering
+
+**Architecture:** Onion Architecture
+
+**Patterns:** Repository, CQRS, Mediator
+
+Address and OrderDetail manages with CQRS pattern without Mediator. 
+
+Ordering entity manages with CQRS pattern with Mediator.
+
+**Layers:**
+- Domain
+- Application
+- Persistence
+- Presentation (WebAPI)
+
+**Database:**
+
+**ORM:** Entity Framework Core

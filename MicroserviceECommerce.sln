@@ -16,7 +16,28 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
+		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{20ED8ACC-93E0-4BDB-A828-F2130B25CCB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E875E2EF-7257-496F-B437-63A56CE8F7BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{9B365BEE-4603-452B-AE27-981650AB7FD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Order.Domain", "Services\Order\Core\MicroserviceECommerce.Order.Domain\MicroserviceECommerce.Order.Domain.csproj", "{B74A1E70-A7B3-4EA4-9638-DCF6BDFDD0D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Order.Application", "Services\Order\Core\MicroserviceECommerce.Order.Application\MicroserviceECommerce.Order.Application.csproj", "{F7236A86-A2C1-4888-9049-CAD2898FBA5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{69CEE730-8865-4147-80C9-ABCB1947B923}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Order.Persistence", "Services\Order\Infrastructure\MicroserviceECommerce.Order.Persistence\MicroserviceECommerce.Order.Persistence.csproj", "{C2EC456A-0820-4B64-BE47-F71C10228F0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Order.WebAPI", "Services\Order\Presentation\MicroserviceECommerce.Order.WebAPI\MicroserviceECommerce.Order.WebAPI.csproj", "{35AFC2A6-B260-4A90-9DBD-9F658ADED5D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{90BA0E50-4A17-496F-B54E-9D72AD5AABB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.IdentityServer", "IdentityServer\MicroserviceECommerce.IdentityServer\MicroserviceECommerce.IdentityServer.csproj", "{29894673-627F-F33C-DD72-731D90A95123}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +53,26 @@ Global
 		{2AD62345-ABFB-4BD6-B444-63BCECD449D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AD62345-ABFB-4BD6-B444-63BCECD449D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AD62345-ABFB-4BD6-B444-63BCECD449D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B74A1E70-A7B3-4EA4-9638-DCF6BDFDD0D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B74A1E70-A7B3-4EA4-9638-DCF6BDFDD0D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B74A1E70-A7B3-4EA4-9638-DCF6BDFDD0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B74A1E70-A7B3-4EA4-9638-DCF6BDFDD0D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7236A86-A2C1-4888-9049-CAD2898FBA5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7236A86-A2C1-4888-9049-CAD2898FBA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7236A86-A2C1-4888-9049-CAD2898FBA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7236A86-A2C1-4888-9049-CAD2898FBA5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2EC456A-0820-4B64-BE47-F71C10228F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2EC456A-0820-4B64-BE47-F71C10228F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2EC456A-0820-4B64-BE47-F71C10228F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2EC456A-0820-4B64-BE47-F71C10228F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35AFC2A6-B260-4A90-9DBD-9F658ADED5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35AFC2A6-B260-4A90-9DBD-9F658ADED5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35AFC2A6-B260-4A90-9DBD-9F658ADED5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35AFC2A6-B260-4A90-9DBD-9F658ADED5D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29894673-627F-F33C-DD72-731D90A95123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29894673-627F-F33C-DD72-731D90A95123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29894673-627F-F33C-DD72-731D90A95123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29894673-627F-F33C-DD72-731D90A95123}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +82,15 @@ Global
 		{BB7B126C-DA62-4F5D-AA80-CEDAD1DCB585} = {49854393-A0AA-4ABE-AAFE-23B86F5071E3}
 		{813A0844-E387-44C7-B6F8-C2B0AA18A581} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{2AD62345-ABFB-4BD6-B444-63BCECD449D0} = {813A0844-E387-44C7-B6F8-C2B0AA18A581}
+		{20ED8ACC-93E0-4BDB-A828-F2130B25CCB4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{E875E2EF-7257-496F-B437-63A56CE8F7BD} = {20ED8ACC-93E0-4BDB-A828-F2130B25CCB4}
+		{9B365BEE-4603-452B-AE27-981650AB7FD3} = {20ED8ACC-93E0-4BDB-A828-F2130B25CCB4}
+		{B74A1E70-A7B3-4EA4-9638-DCF6BDFDD0D6} = {E875E2EF-7257-496F-B437-63A56CE8F7BD}
+		{F7236A86-A2C1-4888-9049-CAD2898FBA5D} = {E875E2EF-7257-496F-B437-63A56CE8F7BD}
+		{69CEE730-8865-4147-80C9-ABCB1947B923} = {20ED8ACC-93E0-4BDB-A828-F2130B25CCB4}
+		{C2EC456A-0820-4B64-BE47-F71C10228F0B} = {69CEE730-8865-4147-80C9-ABCB1947B923}
+		{35AFC2A6-B260-4A90-9DBD-9F658ADED5D2} = {9B365BEE-4603-452B-AE27-981650AB7FD3}
+		{29894673-627F-F33C-DD72-731D90A95123} = {90BA0E50-4A17-496F-B54E-9D72AD5AABB9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4A5686A-FF15-45FE-8472-F47FC1AEF129}
