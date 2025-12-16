@@ -94,3 +94,14 @@ This service carries out the operations for cargo management.
 **Database:** MS SQL Server
 
 **ORM:** Entity Framework Core
+
+### Basket
+This service carries out the operations for basket management.
+
+**Dtos:**
+- BasketItemDto
+- BasketTotalDto
+
+**Architecture:** Single-tier web API project (for now)
+
+**Database:** Redis

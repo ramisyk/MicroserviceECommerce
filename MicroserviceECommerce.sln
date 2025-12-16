@@ -15,6 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Disco
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		general-informations.md = general-informations.md
 		global.json = global.json
 		README.md = README.md
@@ -51,6 +52,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Cargo.DtoLayer", "Services\Cargo\MicroserviceECommerce.Cargo.DtoLayer\MicroserviceECommerce.Cargo.DtoLayer.csproj", "{6190B05B-1D0A-4BD1-94B3-2C7D1868B008}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Cargo.WebAPI", "Services\Cargo\MicroserviceECommerce.Cargo.WebAPI\MicroserviceECommerce.Cargo.WebAPI.csproj", "{C03DCA7A-F56B-4729-8F5B-8C03EA201D9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{F088C2F9-C5A8-4838-A343-0A5472CF4595}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Basket.WebAPI", "Services\Basket\MicroserviceECommerce.Basket.WebAPI\MicroserviceECommerce.Basket.WebAPI.csproj", "{A3059CE7-6910-4C2D-A5EB-27F9D304D834}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -106,6 +111,10 @@ Global
 		{C03DCA7A-F56B-4729-8F5B-8C03EA201D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C03DCA7A-F56B-4729-8F5B-8C03EA201D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C03DCA7A-F56B-4729-8F5B-8C03EA201D9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3059CE7-6910-4C2D-A5EB-27F9D304D834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3059CE7-6910-4C2D-A5EB-27F9D304D834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3059CE7-6910-4C2D-A5EB-27F9D304D834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3059CE7-6910-4C2D-A5EB-27F9D304D834}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,6 +139,8 @@ Global
 		{346C0BD3-0A14-4C15-9DF8-C83934442DBC} = {0E99D424-C486-460D-8E18-894B399463AD}
 		{6190B05B-1D0A-4BD1-94B3-2C7D1868B008} = {0E99D424-C486-460D-8E18-894B399463AD}
 		{C03DCA7A-F56B-4729-8F5B-8C03EA201D9E} = {0E99D424-C486-460D-8E18-894B399463AD}
+		{F088C2F9-C5A8-4838-A343-0A5472CF4595} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A3059CE7-6910-4C2D-A5EB-27F9D304D834} = {F088C2F9-C5A8-4838-A343-0A5472CF4595}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4A5686A-FF15-45FE-8472-F47FC1AEF129}

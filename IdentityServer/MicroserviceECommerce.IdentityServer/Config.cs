@@ -17,6 +17,7 @@ namespace MicroserviceECommerce.IdentityServer
             new ApiResource("ResourceDiscount") { Scopes = { "DiscountFullPermission" } },
             new ApiResource("ResourceOrder") { Scopes = { "OrderFullPermission" } },
             new ApiResource("ResourceCargo") { Scopes = { "CargoFullPermission" } },
+            new ApiResource("ResourceBasket") { Scopes = { "BasketFullPermission" } },
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -34,6 +35,7 @@ namespace MicroserviceECommerce.IdentityServer
             new ApiScope("DiscountFullPermission", "Full authority of discount operations"),
             new ApiScope("OrderFullPermission", "Full authority of order operations"),
             new ApiScope("CargoFullPermission", "Full authority of cargo operations"),
+            new ApiScope("BasketFullPermission", "Full authority of basket operations"),
             new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -44,7 +46,7 @@ namespace MicroserviceECommerce.IdentityServer
             {
                 ClientId = "ECommerceVisitorId",
                 ClientName = "ECommerce Visitor User",
-                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 ClientSecrets = { new Secret("ecommercesecret".Sha256()) },
                 AllowedScopes = { "DiscountFullPermission" }
             },
@@ -54,7 +56,7 @@ namespace MicroserviceECommerce.IdentityServer
             {
                 ClientId = "ECommerceManagerId",
                 ClientName = "ECommerce Manager User",
-                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 ClientSecrets = { new Secret("ecommercesecret".Sha256()) },
                 AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission" }
             },
@@ -64,11 +66,11 @@ namespace MicroserviceECommerce.IdentityServer
             {
                 ClientId = "ECommerceAdminId",
                 ClientName = "ECommerce Admin User",
-                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 ClientSecrets = { new Secret("ecommercesecret".Sha256()) },
                 AllowedScopes =
                 {
-                    "CatalogReadPermission", "CatalogFullPermission", "DiscountFullPermission", "OrderFullPermission", "CargoFullPermission",
+                    "CatalogReadPermission", "CatalogFullPermission", "DiscountFullPermission", "OrderFullPermission", "CargoFullPermission", "BasketFullPermission",
                     IdentityServerConstants.LocalApi.ScopeName,
                     IdentityServerConstants.StandardScopes.Email,
                     IdentityServerConstants.StandardScopes.OpenId,
