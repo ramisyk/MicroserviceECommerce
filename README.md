@@ -57,3 +57,15 @@ Ordering entity manages with CQRS pattern with Mediator.
 **Database:**
 
 **ORM:** Entity Framework Core
+
+### Identity Server
+This service carries out the operations for all identity and user management.
+
+**Entities:**
+- ApplicationUser
+
+**Architecture:** Single-tier web API project (for now)
+
+**Database:** MS SQL Server
+
+**Identity Management:** ASP.NET Core Identity and Identity Server 4 is used together. Identity Server 4 is used for now but it will be migrated to Duende Identity Server in the future.

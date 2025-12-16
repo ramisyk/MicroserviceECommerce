@@ -16,6 +16,7 @@ namespace MicroserviceECommerce.IdentityServer
             new ApiResource("ResourceCatalog") { Scopes = { "CatalogFullPermission", "CatalogReadPermission" } },
             new ApiResource("ResourceDiscount") { Scopes = { "DiscountFullPermission" } },
             new ApiResource("ResourceOrder") { Scopes = { "OrderFullPermission" } },
+            new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
         public static IEnumerable<IdentityResource> IdentityResources => new IdentityResource[]
@@ -30,7 +31,8 @@ namespace MicroserviceECommerce.IdentityServer
             new ApiScope("CatalogFullPermission", "Full authority of catalog operations"),
             new ApiScope("CatalogReadPermission", "Read authority of catalog operations"),
             new ApiScope("DiscountFullPermission", "Full authority of discount operations"),
-            new ApiScope("OrderFullPermission", "Full authority of order operations")
+            new ApiScope("OrderFullPermission", "Full authority of order operations"),
+            new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
         };
 
         public static IEnumerable<Client> Clients => new Client[]
@@ -42,7 +44,7 @@ namespace MicroserviceECommerce.IdentityServer
                 ClientName = "ECommerce Visitor User",
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
                 ClientSecrets = { new Secret("ecommercesecret".Sha256()) },
-                AllowedScopes = { "CatalogReadPermission" }
+                AllowedScopes = { "DiscountFullPermission" }
             },
 
             // Manager
@@ -69,8 +71,7 @@ namespace MicroserviceECommerce.IdentityServer
                     IdentityServerConstants.StandardScopes.Email,
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
-                },
-                AccessTokenLifetime = 600
+                }
             }
         };
 

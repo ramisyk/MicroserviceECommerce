@@ -1,8 +1,10 @@
 ﻿using MicroserviceECommerce.Discount.WebAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroserviceECommerce.Discount.WebAPI.Controllers;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class DiscountsController : ControllerBase

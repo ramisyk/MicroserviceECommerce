@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.IdentityServer", "IdentityServer\MicroserviceECommerce.IdentityServer\MicroserviceECommerce.IdentityServer.csproj", "{29894673-627F-F33C-DD72-731D90A95123}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cargo", "Cargo", "{0E99D424-C486-460D-8E18-894B399463AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,7 @@ Global
 		{C2EC456A-0820-4B64-BE47-F71C10228F0B} = {69CEE730-8865-4147-80C9-ABCB1947B923}
 		{35AFC2A6-B260-4A90-9DBD-9F658ADED5D2} = {9B365BEE-4603-452B-AE27-981650AB7FD3}
 		{29894673-627F-F33C-DD72-731D90A95123} = {90BA0E50-4A17-496F-B54E-9D72AD5AABB9}
+		{0E99D424-C486-460D-8E18-894B399463AD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4A5686A-FF15-45FE-8472-F47FC1AEF129}

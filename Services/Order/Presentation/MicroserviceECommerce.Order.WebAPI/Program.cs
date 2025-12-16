@@ -4,10 +4,21 @@ using MicroserviceECommerce.Order.Application.Interfaces;
 using MicroserviceECommerce.Order.Application.Services;
 using MicroserviceECommerce.Order.Persistence.Context;
 using MicroserviceECommerce.Order.Persistence.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+    opt.Authority = builder.Configuration["IdentityServerURL"];
+    opt.Audience = "ResourceOrder";
+    // Use default OpenID Connect metadata discovery like in other services
+});
+
+// Register authorization services so [Authorize] attributes are honored
+builder.Services.AddAuthorization();
 
 builder.Services.AddDbContext<OrderDbContext>();
 
@@ -43,6 +54,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

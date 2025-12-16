@@ -1,17 +1,19 @@
 ﻿using System.Threading.Tasks;
+using static IdentityServer4.IdentityServerConstants;
 using MicroserviceECommerce.IdentityServer.Dtos;
 using MicroserviceECommerce.IdentityServer.Models;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroserviceECommerce.IdentityServer.Controllers
 {
+    [Authorize(LocalApi.PolicyName)]
     [Route("api/[controller]")]
     [ApiController]
     public class RegistersController : ControllerBase
     {
-        public readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
         public RegistersController(UserManager<ApplicationUser> userManager)
         {

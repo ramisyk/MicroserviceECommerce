@@ -5,8 +5,15 @@ using MicroserviceECommerce.Catalog.WebAPI.Services.ProductDetailServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.ProductImageServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.ProductServices;
 using MicroserviceECommerce.Catalog.WebAPI.Settings;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+    opt.Authority = builder.Configuration["IdentityServerURL"];
+    opt.Audience = "ResourceCatalog";
+});
 
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
@@ -40,6 +47,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
