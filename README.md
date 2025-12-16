@@ -54,7 +54,7 @@ Ordering entity manages with CQRS pattern with Mediator.
 - Persistence
 - Presentation (WebAPI)
 
-**Database:**
+**Database:** MS SQL Server
 
 **ORM:** Entity Framework Core
 
@@ -69,3 +69,28 @@ This service carries out the operations for all identity and user management.
 **Database:** MS SQL Server
 
 **Identity Management:** ASP.NET Core Identity and Identity Server 4 is used together. Identity Server 4 is used for now but it will be migrated to Duende Identity Server in the future.
+
+
+### Cargo
+This service carries out the operations for cargo management.
+
+**Entities:**
+- CargoDetail
+- CargoOperation
+- CargoCompany
+- CargoCustomer
+
+**Architecture:** N-Tier Application
+
+**Patterns:** Repository Design Pattern
+
+**Layers:**
+- EntityLayer
+- BusinessLayer
+- DataAccessLayer
+- DtoLayer
+- PresentationLayer (WebAPI)
+
+**Database:** MS SQL Server
+
+**ORM:** Entity Framework Core

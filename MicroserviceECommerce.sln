@@ -15,6 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Disco
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 	ProjectSection(SolutionItems) = preProject
+		general-informations.md = general-informations.md
 		global.json = global.json
 		README.md = README.md
 	EndProjectSection
@@ -40,6 +41,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.IdentityServer", "IdentityServer\MicroserviceECommerce.IdentityServer\MicroserviceECommerce.IdentityServer.csproj", "{29894673-627F-F33C-DD72-731D90A95123}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cargo", "Cargo", "{0E99D424-C486-460D-8E18-894B399463AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Cargo.BusinessLayer", "Services\Cargo\MicroserviceECommerce.Cargo.BusinessLayer\MicroserviceECommerce.Cargo.BusinessLayer.csproj", "{A560CAFD-2A5C-45B2-8175-C494F84C344A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Cargo.EntityLayer", "Services\Cargo\MicroserviceECommerce.Cargo.EntityLayer\MicroserviceECommerce.Cargo.EntityLayer.csproj", "{79426231-7902-436A-9212-2CF7A93754A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Cargo.DataAccessLayer", "Services\Cargo\MicroserviceECommerce.Cargo.DataAccessLayer\MicroserviceECommerce.Cargo.DataAccessLayer.csproj", "{346C0BD3-0A14-4C15-9DF8-C83934442DBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Cargo.DtoLayer", "Services\Cargo\MicroserviceECommerce.Cargo.DtoLayer\MicroserviceECommerce.Cargo.DtoLayer.csproj", "{6190B05B-1D0A-4BD1-94B3-2C7D1868B008}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceECommerce.Cargo.WebAPI", "Services\Cargo\MicroserviceECommerce.Cargo.WebAPI\MicroserviceECommerce.Cargo.WebAPI.csproj", "{C03DCA7A-F56B-4729-8F5B-8C03EA201D9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +86,26 @@ Global
 		{29894673-627F-F33C-DD72-731D90A95123}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29894673-627F-F33C-DD72-731D90A95123}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29894673-627F-F33C-DD72-731D90A95123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A560CAFD-2A5C-45B2-8175-C494F84C344A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A560CAFD-2A5C-45B2-8175-C494F84C344A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A560CAFD-2A5C-45B2-8175-C494F84C344A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A560CAFD-2A5C-45B2-8175-C494F84C344A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79426231-7902-436A-9212-2CF7A93754A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79426231-7902-436A-9212-2CF7A93754A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79426231-7902-436A-9212-2CF7A93754A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79426231-7902-436A-9212-2CF7A93754A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{346C0BD3-0A14-4C15-9DF8-C83934442DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346C0BD3-0A14-4C15-9DF8-C83934442DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346C0BD3-0A14-4C15-9DF8-C83934442DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346C0BD3-0A14-4C15-9DF8-C83934442DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6190B05B-1D0A-4BD1-94B3-2C7D1868B008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6190B05B-1D0A-4BD1-94B3-2C7D1868B008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6190B05B-1D0A-4BD1-94B3-2C7D1868B008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6190B05B-1D0A-4BD1-94B3-2C7D1868B008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C03DCA7A-F56B-4729-8F5B-8C03EA201D9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03DCA7A-F56B-4729-8F5B-8C03EA201D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C03DCA7A-F56B-4729-8F5B-8C03EA201D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C03DCA7A-F56B-4729-8F5B-8C03EA201D9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +125,11 @@ Global
 		{35AFC2A6-B260-4A90-9DBD-9F658ADED5D2} = {9B365BEE-4603-452B-AE27-981650AB7FD3}
 		{29894673-627F-F33C-DD72-731D90A95123} = {90BA0E50-4A17-496F-B54E-9D72AD5AABB9}
 		{0E99D424-C486-460D-8E18-894B399463AD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A560CAFD-2A5C-45B2-8175-C494F84C344A} = {0E99D424-C486-460D-8E18-894B399463AD}
+		{79426231-7902-436A-9212-2CF7A93754A7} = {0E99D424-C486-460D-8E18-894B399463AD}
+		{346C0BD3-0A14-4C15-9DF8-C83934442DBC} = {0E99D424-C486-460D-8E18-894B399463AD}
+		{6190B05B-1D0A-4BD1-94B3-2C7D1868B008} = {0E99D424-C486-460D-8E18-894B399463AD}
+		{C03DCA7A-F56B-4729-8F5B-8C03EA201D9E} = {0E99D424-C486-460D-8E18-894B399463AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4A5686A-FF15-45FE-8472-F47FC1AEF129}
