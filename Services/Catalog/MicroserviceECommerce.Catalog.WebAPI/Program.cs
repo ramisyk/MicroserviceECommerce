@@ -1,9 +1,12 @@
 using Microsoft.Extensions.Options;
 using System.Reflection;
 using MicroserviceECommerce.Catalog.WebAPI.Services.CategoryServices;
+using MicroserviceECommerce.Catalog.WebAPI.Services.FeatureServices;
+using MicroserviceECommerce.Catalog.WebAPI.Services.FeatureSliderServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.ProductDetailServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.ProductImageServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.ProductServices;
+using MicroserviceECommerce.Catalog.WebAPI.Services.SpecialOfferServices;
 using MicroserviceECommerce.Catalog.WebAPI.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
@@ -19,6 +22,9 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductDetailService, ProductDetailService>();
 builder.Services.AddScoped<IProductImageService, ProductImageService>();
+builder.Services.AddScoped<IFeatureSliderService, FeatureSliderService>();
+builder.Services.AddScoped<ISpecialOfferService, SpecialOfferService>();
+builder.Services.AddScoped<IFeatureService, FeatureService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

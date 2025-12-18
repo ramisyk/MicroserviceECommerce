@@ -3,11 +3,13 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace MicroserviceECommerce.Catalog.WebAPI.Entities;
 
-public class Category
+public class FeatureSlider
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
-    public string CategoryId { get; set; }
-    public string CategoryName { get; set; }
+    public string FeatureSliderId { get; set; }
+    public string Title { get; set; }
+    public string Description { get; set; }
     public string ImageUrl { get; set; }
+    public bool Status { get; set; }
 }

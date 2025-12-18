@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.CategoryDtos;
+using MicroserviceECommerce.Catalog.WebAPI.Dtos.FeatureDtos;
+using MicroserviceECommerce.Catalog.WebAPI.Dtos.FeatureSliderDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.ProductDetailDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.ProductDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.ProductImageDtos;
+using MicroserviceECommerce.Catalog.WebAPI.Dtos.SpecialOfferDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Entities;
 
 namespace MicroserviceECommerce.Catalog.WebAPI.Mapping;
@@ -31,5 +34,20 @@ public class GeneralMapping : Profile
         CreateMap<ProductImage, CreateProductImageDto>().ReverseMap();
         CreateMap<ProductImage, UpdateProductImageDto>().ReverseMap();
         CreateMap<ProductImage, GetByIdProductDetailDto>().ReverseMap();
+
+        CreateMap<FeatureSlider, ResultFeatureSliderDto>().ReverseMap();
+        CreateMap<FeatureSlider, CreateFeatureSliderDto>().ReverseMap();
+        CreateMap<FeatureSlider, UpdateFeatureSliderDto>().ReverseMap();
+        CreateMap<FeatureSlider, GetByIdFeatureSliderDto>().ReverseMap();
+
+        CreateMap<SpecialOffer, ResultSpecialOfferDto>().ReverseMap();
+        CreateMap<SpecialOffer, CreateSpecialOfferDto>().ReverseMap();
+        CreateMap<SpecialOffer, UpdateSpecialOfferDto>().ReverseMap();
+        CreateMap<SpecialOffer, GetByIdSpecialOfferDto>().ReverseMap();
+
+        CreateMap<Feature, ResultFeatureDto>().ReverseMap();
+        CreateMap<Feature, CreateFeatureDto>().ReverseMap();
+        CreateMap<Feature, UpdateFeatureDto>().ReverseMap();
+        CreateMap<Feature, GetByIdFeatureDto>().ReverseMap();
     }
 }
