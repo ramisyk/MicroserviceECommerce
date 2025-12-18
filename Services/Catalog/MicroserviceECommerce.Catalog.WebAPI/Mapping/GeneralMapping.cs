@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using MicroserviceECommerce.Catalog.WebAPI.Dtos.BrandDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.CategoryDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.FeatureDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.FeatureSliderDtos;
+using MicroserviceECommerce.Catalog.WebAPI.Dtos.OfferDiscountDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.ProductDetailDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.ProductDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.ProductImageDtos;
@@ -49,5 +51,16 @@ public class GeneralMapping : Profile
         CreateMap<Feature, CreateFeatureDto>().ReverseMap();
         CreateMap<Feature, UpdateFeatureDto>().ReverseMap();
         CreateMap<Feature, GetByIdFeatureDto>().ReverseMap();
+
+        CreateMap<OfferDiscount, ResultOfferDiscountDto>().ReverseMap();
+        CreateMap<OfferDiscount, CreateOfferDiscountDto>().ReverseMap();
+        CreateMap<OfferDiscount, UpdateOfferDiscountDto>().ReverseMap();
+        CreateMap<OfferDiscount, GetByIdOfferDiscountDto>().ReverseMap();
+
+        CreateMap<Brand, ResultBrandDto>().ReverseMap();
+        CreateMap<Brand, CreateBrandDto>().ReverseMap();
+        CreateMap<Brand, UpdateBrandDto>().ReverseMap();
+        CreateMap<Brand, GetByIdBrandDto>().ReverseMap();
+
     }
 }
