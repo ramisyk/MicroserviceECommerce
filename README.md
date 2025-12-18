@@ -9,10 +9,16 @@ This repo is being developed within the scope of training in order to understand
 This service carries out the operations for product management.
 
 **Entities:**
+- About
+- Brand
 - Category
+- Feature
+- FeatureSlider
+- OfferDiscount
 - Product
 - Product Detail
 - Product Image
+- SpecialOffer
 
 **Architecture:** Single-tier web API project (for now)
 

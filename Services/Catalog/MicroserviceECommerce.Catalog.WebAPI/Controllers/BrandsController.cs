@@ -1,10 +1,12 @@
 ﻿using MicroserviceECommerce.Catalog.WebAPI.Dtos.BrandDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Services.BrandServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroserviceECommerce.Catalog.WebAPI.Controllers;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class BrandsController : ControllerBase

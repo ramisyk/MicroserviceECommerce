@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MicroserviceECommerce.Catalog.WebAPI.Dtos.AboutDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.BrandDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.CategoryDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.FeatureDtos;
@@ -62,5 +63,9 @@ public class GeneralMapping : Profile
         CreateMap<Brand, UpdateBrandDto>().ReverseMap();
         CreateMap<Brand, GetByIdBrandDto>().ReverseMap();
 
+        CreateMap<About, ResultAboutDto>().ReverseMap();
+        CreateMap<About, CreateAboutDto>().ReverseMap();
+        CreateMap<About, UpdateAboutDto>().ReverseMap();
+        CreateMap<About, GetByIdAboutDto>().ReverseMap();
     }
 }

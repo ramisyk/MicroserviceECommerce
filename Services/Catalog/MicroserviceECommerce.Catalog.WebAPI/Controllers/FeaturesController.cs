@@ -1,10 +1,12 @@
 ﻿using MicroserviceECommerce.Catalog.WebAPI.Dtos.FeatureDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Services.FeatureServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroserviceECommerce.Catalog.WebAPI.Controllers;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class FeaturesController : ControllerBase

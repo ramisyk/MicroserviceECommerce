@@ -1,3 +1,4 @@
+using MicroserviceECommerce.Catalog.WebAPI.Services.AboutServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.BrandServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.CategoryServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.FeatureServices;
@@ -29,6 +30,7 @@ builder.Services.AddScoped<ISpecialOfferService, SpecialOfferService>();
 builder.Services.AddScoped<IFeatureService, FeatureService>();
 builder.Services.AddScoped<IOfferDiscountService, OfferDiscountService>();
 builder.Services.AddScoped<IBrandService, BrandService>();
+builder.Services.AddScoped<IAboutService, AboutService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
