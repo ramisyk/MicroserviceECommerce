@@ -9,6 +9,7 @@ namespace MicroserviceECommerce.Catalog.WebAPI.Services.ProductServices;
 public class ProductService : IProductService
 {
     private readonly IMongoCollection<Product> _productCollection;
+    private readonly IMongoCollection<Category> _categoryCollection;
     private readonly IMapper _mapper;
 
     public ProductService(IDatabaseSettings _databaseSettings,  IMapper mapper)
@@ -16,6 +17,7 @@ public class ProductService : IProductService
         var client = new MongoClient(_databaseSettings.ConnectionString);
         var database = client.GetDatabase(_databaseSettings.DatabaseName);
         _productCollection = database.GetCollection<Product>(_databaseSettings.ProductCollectionName);
+        _categoryCollection = database.GetCollection<Category>(_databaseSettings.CategoryCollectionName);
         _mapper = mapper;
     }
 
@@ -48,13 +50,27 @@ public class ProductService : IProductService
         return _mapper.Map<Task<GetByIdProductDto>>(value);
     }
 
-    public Task<List<ResultProductsWithCategoryDto>> GetProductsWithCategoryAsync()
+    public async Task<List<ResultProductsWithCategoryDto>> GetProductsWithCategoryAsync()
     {
-        throw new NotImplementedException();
+        var values = await _productCollection.Find(x => true).ToListAsync();
+        
+        foreach (var item in values)
+        {
+            item.Category = await _categoryCollection.Find<Category>(x => x.CategoryId == item.CategoryId).FirstAsync();
+        }
+
+        return _mapper.Map<List<ResultProductsWithCategoryDto>>(values);
     }
 
-    public Task<List<ResultProductsWithCategoryDto>> GetProductsWithCategoryByCategoryIdAsync(string categoryId)
+    public async Task<List<ResultProductsWithCategoryDto>> GetProductsWithCategoryByCategoryIdAsync(string categoryId)
     {
-        throw new NotImplementedException();
+        var values = await _productCollection.Find(x => x.CategoryId == categoryId).ToListAsync();
+
+        foreach (var item in values)
+        {
+            item.Category = await _categoryCollection.Find<Category>(x => x.CategoryId == item.CategoryId).FirstAsync();
+        }
+
+        return _mapper.Map<List<ResultProductsWithCategoryDto>>(values);
     }
 }
