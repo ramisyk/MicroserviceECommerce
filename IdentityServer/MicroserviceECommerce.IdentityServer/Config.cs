@@ -18,6 +18,7 @@ namespace MicroserviceECommerce.IdentityServer
             new ApiResource("ResourceOrder") { Scopes = { "OrderFullPermission" } },
             new ApiResource("ResourceCargo") { Scopes = { "CargoFullPermission" } },
             new ApiResource("ResourceBasket") { Scopes = { "BasketFullPermission" } },
+            new ApiResource("ResourceComment") { Scopes = { "CommentFullPermission" } },
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -36,6 +37,7 @@ namespace MicroserviceECommerce.IdentityServer
             new ApiScope("OrderFullPermission", "Full authority of order operations"),
             new ApiScope("CargoFullPermission", "Full authority of cargo operations"),
             new ApiScope("BasketFullPermission", "Full authority of basket operations"),
+            new ApiScope("CommentFullPermission", "Full authority of comment operations"),
             new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -70,7 +72,13 @@ namespace MicroserviceECommerce.IdentityServer
                 ClientSecrets = { new Secret("ecommercesecret".Sha256()) },
                 AllowedScopes =
                 {
-                    "CatalogReadPermission", "CatalogFullPermission", "DiscountFullPermission", "OrderFullPermission", "CargoFullPermission", "BasketFullPermission",
+                    "CatalogReadPermission",
+                    "CatalogFullPermission",
+                    "DiscountFullPermission",
+                    "OrderFullPermission",
+                    "CargoFullPermission",
+                    "BasketFullPermission",
+                    "CommentFullPermission",
                     IdentityServerConstants.LocalApi.ScopeName,
                     IdentityServerConstants.StandardScopes.Email,
                     IdentityServerConstants.StandardScopes.OpenId,
