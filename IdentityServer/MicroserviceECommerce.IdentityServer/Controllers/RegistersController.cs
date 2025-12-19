@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MicroserviceECommerce.IdentityServer.Controllers
 {
-    [Authorize(LocalApi.PolicyName)]
+    //[Authorize(LocalApi.PolicyName)]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class RegistersController : ControllerBase

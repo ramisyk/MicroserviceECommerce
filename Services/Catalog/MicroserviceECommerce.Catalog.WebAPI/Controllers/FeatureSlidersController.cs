@@ -1,7 +1,6 @@
 ﻿using MicroserviceECommerce.Catalog.WebAPI.Dtos.FeatureSliderDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Services.FeatureSliderServices;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroserviceECommerce.Catalog.WebAPI.Controllers;

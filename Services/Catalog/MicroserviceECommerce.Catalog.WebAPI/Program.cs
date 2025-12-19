@@ -1,6 +1,7 @@
 using MicroserviceECommerce.Catalog.WebAPI.Services.AboutServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.BrandServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.CategoryServices;
+using MicroserviceECommerce.Catalog.WebAPI.Services.ContactServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.FeatureServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.FeatureSliderServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.OfferDiscountServices;
@@ -31,6 +32,7 @@ builder.Services.AddScoped<IFeatureService, FeatureService>();
 builder.Services.AddScoped<IOfferDiscountService, OfferDiscountService>();
 builder.Services.AddScoped<IBrandService, BrandService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

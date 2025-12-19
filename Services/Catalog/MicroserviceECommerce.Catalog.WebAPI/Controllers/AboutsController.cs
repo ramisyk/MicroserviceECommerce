@@ -1,7 +1,6 @@
 ﻿using MicroserviceECommerce.Catalog.WebAPI.Dtos.AboutDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Services.AboutServices;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroserviceECommerce.Catalog.WebAPI.Controllers;

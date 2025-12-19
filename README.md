@@ -12,6 +12,7 @@ This service carries out the operations for product management.
 - About
 - Brand
 - Category
+- Contact
 - Feature
 - FeatureSlider
 - OfferDiscount

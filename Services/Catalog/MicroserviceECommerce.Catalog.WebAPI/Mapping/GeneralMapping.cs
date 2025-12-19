@@ -2,6 +2,7 @@
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.AboutDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.BrandDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.CategoryDtos;
+using MicroserviceECommerce.Catalog.WebAPI.Dtos.ContactDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.FeatureDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.FeatureSliderDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Dtos.OfferDiscountDtos;
@@ -67,5 +68,10 @@ public class GeneralMapping : Profile
         CreateMap<About, CreateAboutDto>().ReverseMap();
         CreateMap<About, UpdateAboutDto>().ReverseMap();
         CreateMap<About, GetByIdAboutDto>().ReverseMap();
+
+        CreateMap<Contact, ResultContactDto>().ReverseMap();
+        CreateMap<Contact, CreateContactDto>().ReverseMap();
+        CreateMap<Contact, UpdateContactDto>().ReverseMap();
+        CreateMap<Contact, GetByIdContactDto>().ReverseMap();
     }
 }
