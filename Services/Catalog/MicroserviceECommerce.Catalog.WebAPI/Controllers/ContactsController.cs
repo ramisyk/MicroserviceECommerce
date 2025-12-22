@@ -1,9 +1,11 @@
 ﻿using MicroserviceECommerce.Catalog.WebAPI.Dtos.ContactDtos;
 using MicroserviceECommerce.Catalog.WebAPI.Services.ContactServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroserviceECommerce.Catalog.WebAPI.Controllers;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class ContactsController : ControllerBase
