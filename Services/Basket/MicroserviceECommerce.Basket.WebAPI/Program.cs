@@ -1,4 +1,3 @@
-using MicroserviceECommerce.Basket.WebAPI.LoginServices;
 using MicroserviceECommerce.Basket.WebAPI.Services;
 using MicroserviceECommerce.Basket.WebAPI.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -15,8 +14,7 @@ JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 // Add services to the container.
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
-{
-    opt.Authority = builder.Configuration["IdentityServerURL"];
+{ opt.Authority = builder.Configuration["IdentityServerURL"];
     opt.Audience = "ResourceBasket";
 });
 
