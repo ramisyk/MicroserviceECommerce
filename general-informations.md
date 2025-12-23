@@ -4,6 +4,7 @@ The application uses the following ports:
 
 | Port | Service								|
 |------|----------------------------------------|
+| 5000 | API Gateway							|
 | 5001 | Identity Server						|
 | 7070 | Catalog Service						|
 | 7071 | Discount Service						|
