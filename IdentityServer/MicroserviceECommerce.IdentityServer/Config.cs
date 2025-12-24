@@ -19,6 +19,7 @@ namespace MicroserviceECommerce.IdentityServer
             new ApiResource("ResourceCargo") { Scopes = { "CargoFullPermission" } },
             new ApiResource("ResourceBasket") { Scopes = { "BasketFullPermission" } },
             new ApiResource("ResourceComment") { Scopes = { "CommentFullPermission" } },
+            new ApiResource("ResourceOcelot") { Scopes = { "OcelotFullPermission" } },
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -38,6 +39,7 @@ namespace MicroserviceECommerce.IdentityServer
             new ApiScope("CargoFullPermission", "Full authority of cargo operations"),
             new ApiScope("BasketFullPermission", "Full authority of basket operations"),
             new ApiScope("CommentFullPermission", "Full authority of comment operations"),
+            new ApiScope("OcelotFullPermission", "Full authority of ocelot operations"),
             new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -50,7 +52,7 @@ namespace MicroserviceECommerce.IdentityServer
                 ClientName = "ECommerce Visitor User",
                 AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 ClientSecrets = { new Secret("ecommercesecret".Sha256()) },
-                AllowedScopes = { "DiscountFullPermission" }
+                AllowedScopes = { "DiscountFullPermission", "OcelotFullPermission" }
             },
 
             // Manager
@@ -60,7 +62,7 @@ namespace MicroserviceECommerce.IdentityServer
                 ClientName = "ECommerce Manager User",
                 AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 ClientSecrets = { new Secret("ecommercesecret".Sha256()) },
-                AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission" }
+                AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission", "OcelotFullPermission" }
             },
 
             // Admin
@@ -79,6 +81,7 @@ namespace MicroserviceECommerce.IdentityServer
                     "CargoFullPermission",
                     "BasketFullPermission",
                     "CommentFullPermission",
+                    "OcelotFullPermission",
                     IdentityServerConstants.LocalApi.ScopeName,
                     IdentityServerConstants.StandardScopes.Email,
                     IdentityServerConstants.StandardScopes.OpenId,
