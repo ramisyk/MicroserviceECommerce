@@ -50,4 +50,11 @@ public class DiscountsController : ControllerBase
         await _discountService.DeleteCouponAsync(id);
         return Ok();
     }
+
+    [HttpGet("GetDiscountCouponCountRate")]
+    public IActionResult GetDiscountCouponCountRate(string code)
+    {
+        var values = _discountService.GetDiscountCouponCountRate(code);
+        return Ok(values);
+    }
 }

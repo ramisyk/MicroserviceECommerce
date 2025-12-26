@@ -64,4 +64,16 @@ public class DiscountService : IDiscountService
         using var connection = _context.CreateConnection();
         await connection.ExecuteAsync(query, parameters);
     }
+
+    public int GetDiscountCouponCountRate(string code)
+    {
+        string query = "Select Rate From Coupons Where Code=@code";
+        var parameters = new DynamicParameters();
+        parameters.Add("@code", code);
+        using (var connection = _context.CreateConnection())
+        {
+            var value = connection.QueryFirstOrDefault<int>(query, parameters);
+            return value;
+        }
+    }
 }
