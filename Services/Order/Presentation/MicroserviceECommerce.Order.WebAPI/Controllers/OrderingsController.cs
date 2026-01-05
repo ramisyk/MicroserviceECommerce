@@ -2,57 +2,54 @@
 using MicroserviceECommerce.Order.Application.Features.Mediator.Commands.OrderingCommands;
 using MicroserviceECommerce.Order.Application.Features.Mediator.Queries.OrderingQueries;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MicroserviceECommerce.Order.WebAPI.Controllers
+namespace MicroserviceECommerce.Order.WebAPI.Controllers;
+
+[Authorize]
+[Route("api/[controller]")]
+[ApiController]
+public class OrderingsController(IMediator mediator) : ControllerBase
 {
-    [Authorize]
-    [Route("api/[controller]")]
-    [ApiController]
-    public class OrderingsController : ControllerBase
+    [HttpGet]
+    public async Task<IActionResult> GetOrderingList()
     {
-        private readonly IMediator _mediator;
+        var values = await mediator.Send(new GetOrderingQuery());
+        return Ok(values);
+    }
 
-        public OrderingsController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetOrderingById(int id)
+    {
+        var value = await mediator.Send(new GetOrderingByIdQuery(id));
+        return Ok(value);
+    }
 
-        [HttpGet]
-        public async Task<IActionResult> GetOrderingList()
-        {
-            var values = await _mediator.Send(new GetOrderingQuery());
-            return Ok(values);
-        }
+    [HttpPost]
+    public async Task<IActionResult> CreateOrdering([FromBody] CreateOrderingCommand command)
+    {
+        await mediator.Send(command);
+        return Ok();
+    }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetOrderingById(int id)
-        {
-            var value = await _mediator.Send(new GetOrderingByIdQuery(id));
-            return Ok(value);
-        }
+    [HttpPut]
+    public async Task<IActionResult> UpdateOrdering([FromBody] UpdateOrderingCommand command)
+    {
+        await mediator.Send(command);
+        return Ok();
+    }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateOrdering([FromBody] CreateOrderingCommand command)
-        {
-            await _mediator.Send(command);
-            return Ok();
-        }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteOrdering(int id)
+    {
+        await mediator.Send(new DeleteOrderingCommand(id));
+        return Ok();
+    }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateOrdering([FromBody] UpdateOrderingCommand command)
-        {
-            await _mediator.Send(command);
-            return Ok();
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOrdering(int id)
-        {
-            await _mediator.Send(new DeleteOrderingCommand(id));
-            return Ok();
-        }
-
+    [HttpGet("GetOrderingByUserId/{id}")]
+    public async Task<IActionResult> GetOrderingByUserId(string id)
+    {
+        var values = await mediator.Send(new GetOrderingByUserIdQuery(id));
+        return Ok(values);
     }
 }

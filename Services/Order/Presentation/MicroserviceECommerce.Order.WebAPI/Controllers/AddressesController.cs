@@ -3,65 +3,51 @@ using MicroserviceECommerce.Order.Application.Features.CQRS.Handlers.AddressHand
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MicroserviceECommerce.Order.WebAPI.Controllers
+namespace MicroserviceECommerce.Order.WebAPI.Controllers;
+
+[Authorize]
+[Route("api/[controller]")]
+[ApiController]
+public class AddressesController(
+    GetAddressQueryHandler getAddressQueryHandler,
+    GetAddressByIdQueryHandler getAddressByIdQueryHandler,
+    CreateAddressCommandHandler createAddressCommandHandler,
+    UpdateAddressCommandHandler updateAddressCommandHandler,
+    DeleteAddressCommandHandler deleteAddressCommandHandler)
+    : ControllerBase
 {
-    [Authorize]
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AddressesController : ControllerBase
+    [HttpGet]
+    public async Task<IActionResult> GetAddresses()
     {
-        private readonly GetAddressQueryHandler _getAddressQueryHandler;
-        private readonly GetAddressByIdQueryHandler _getAddressByIdQueryHandler;
-        private readonly CreateAddressCommandHandler _createAddressCommandHandler;
-        private readonly UpdateAddressCommandHandler _updateAddressCommandHandler;
-        private readonly DeleteAddressCommandHandler _deleteAddressCommandHandler;
+        var result = await getAddressQueryHandler.Handle();
+        return Ok(result);
+    }
 
-        public AddressesController(GetAddressQueryHandler getAddressQueryHandler,
-            GetAddressByIdQueryHandler getAddressByIdQueryHandler,
-            CreateAddressCommandHandler createAddressCommandHandler,
-            UpdateAddressCommandHandler updateAddressCommandHandler,
-            DeleteAddressCommandHandler deleteAddressCommandHandler)
-        {
-            _getAddressQueryHandler = getAddressQueryHandler;
-            _getAddressByIdQueryHandler = getAddressByIdQueryHandler;
-            _createAddressCommandHandler = createAddressCommandHandler;
-            _updateAddressCommandHandler = updateAddressCommandHandler;
-            _deleteAddressCommandHandler = deleteAddressCommandHandler;
-        }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetAddressById(int id)
+    {
+        var result = await getAddressByIdQueryHandler.Handle(new(id));
+        return Ok(result);
+    }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAddresses()
-        {
-            var result = await _getAddressQueryHandler.Handle();
-            return Ok(result);
-        }
+    [HttpPost]
+    public async Task<IActionResult> CreateAddress([FromBody] CreateAddressCommand command)
+    {
+        var result = await createAddressCommandHandler.Handle(command);
+        return CreatedAtAction(nameof(GetAddressById), new { id = result }, result);
+    }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetAddressById(int id)
-        {
-            var result = await _getAddressByIdQueryHandler.Handle(new(id));
-            return Ok(result);
-        }
+    [HttpPut]
+    public async Task<IActionResult> UpdateAddress([FromBody] UpdateAddressCommand command)
+    {
+        await updateAddressCommandHandler.Handle(command);
+        return NoContent();
+    }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateAddress([FromBody] CreateAddressCommand command)
-        {
-            var result = await _createAddressCommandHandler.Handle(command);
-            return CreatedAtAction(nameof(GetAddressById), new { id = result }, result);
-        }
-
-        [HttpPut]
-        public async Task<IActionResult> UpdateAddress([FromBody] UpdateAddressCommand command)
-        {
-            await _updateAddressCommandHandler.Handle(command);
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAddress(int id)
-        {
-            await _deleteAddressCommandHandler.Handle(new(id));
-            return NoContent();
-        }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteAddress(int id)
+    {
+        await deleteAddressCommandHandler.Handle(new(id));
+        return NoContent();
     }
 }
