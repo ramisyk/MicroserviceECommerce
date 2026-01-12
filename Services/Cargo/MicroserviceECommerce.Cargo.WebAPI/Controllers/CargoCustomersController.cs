@@ -69,9 +69,9 @@ public class CargoCustomersController(ICargoCustomerService cargoCustomerService
         return Ok("Kargo Müşteri Güncelleme İşlemi Başarıyla Yapıldı");
     }
 
-    //[HttpGet("GetCargoCustomerById")]
-    //public IActionResult GetCargoCustomerById(string id)
-    //{
-    //    return Ok(_cargoCustomerService.TGetCargoCustomerById(id));
-    //}
+    [HttpGet("GetCargoCustomerById")]
+    public IActionResult GetCargoCustomerById(string id)
+    {
+        return Ok(cargoCustomerService.TGetCargoCustomerById(id));
+    }
 }
