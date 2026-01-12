@@ -9,6 +9,7 @@ using MicroserviceECommerce.Catalog.WebAPI.Services.ProductDetailServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.ProductImageServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.ProductServices;
 using MicroserviceECommerce.Catalog.WebAPI.Services.SpecialOfferServices;
+using MicroserviceECommerce.Catalog.WebAPI.Services.StatisticServices;
 using MicroserviceECommerce.Catalog.WebAPI.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
@@ -33,6 +34,7 @@ builder.Services.AddScoped<IOfferDiscountService, OfferDiscountService>();
 builder.Services.AddScoped<IBrandService, BrandService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IStatisticService, StatisticService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
