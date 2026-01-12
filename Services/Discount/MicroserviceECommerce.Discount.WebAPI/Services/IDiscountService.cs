@@ -10,5 +10,5 @@ public interface IDiscountService
     Task UpdateCouponAsync(UpdateCouponDto couponDto);
     Task DeleteCouponAsync(int id);
     int GetDiscountCouponCountRate(string code);
-
+    Task<int> GetDiscountCouponCount();
 }
